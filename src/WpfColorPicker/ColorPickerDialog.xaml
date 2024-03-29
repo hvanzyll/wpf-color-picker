@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dsafa.WpfColorPicker"
         mc:Ignorable="d"
-        Title="Choose a color" Height="500" Width="580"
+        Title="Choose a color" Height="450" Width="540"
         x:Name="dialog"
-        SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterOwner"
         WindowStyle="SingleBorderWindow">
     <Grid Margin="10">
@@ -20,7 +19,7 @@
             <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <local:ColorPicker Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="colorPicker" Height="360"/>
+        <local:ColorPicker Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="colorPicker" />
         <ItemsControl Grid.Row="2" Grid.Column="0" ItemsSource="{Binding ElementName=dialog, Path=Palette}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>

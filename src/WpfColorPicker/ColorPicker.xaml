@@ -16,6 +16,7 @@
                 <ResourceDictionary Source="Resources/StaticBrushes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <converters:UnitToPercentConverter x:Key="toPercentConverter"/>
+            <converters:ColorConverter x:Key="ColorConverter"/>
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel>
@@ -26,9 +27,6 @@
                                           Brightness="{Binding Brightness, Mode=TwoWay}"/>
         <local:HuePicker DockPanel.Dock="Left" Margin="5, 0" HorizontalAlignment="Left"
                          Width="50" Hue="{Binding Hue, Mode=TwoWay}"/>
-        <local:TransparencyPicker DockPanel.Dock="Left" HorizontalAlignment="Left" Width="50" 
-                                  Color="{Binding Color, Mode=OneWay}"
-                                  Alpha="{Binding Alpha, Mode=TwoWay}"/>
         <DockPanel HorizontalAlignment="Left" Margin="10, 0">
             <Grid DockPanel.Dock="Top">
                 <Grid.RowDefinitions>
@@ -81,7 +79,6 @@
                     <RowDefinition Height="{StaticResource inputMargin}"/>
                     <RowDefinition Height="{StaticResource inputHeight}"/>
                     <RowDefinition Height="{StaticResource inputMargin}"/>
-                    <RowDefinition Height="{StaticResource inputHeight}"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -109,12 +106,9 @@
                 
                 <Label Content="B:" Grid.Row="10"/>
                 <local:ColorNumericInput Grid.Row="10" Grid.Column="1" Min="0" Max="255" Step="1" Value="{Binding Blue, Mode=TwoWay}"/>
-                
-                <Label Content="A:" Grid.Row="12"/>
-                <local:ColorNumericInput Grid.Row="12" Grid.Column="1" Min="0" Max="255" Step="1" Value="{Binding Alpha, Mode=TwoWay}"/>
-                
-                <TextBox Text="{Binding Color}" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2" />
-                <local:EyeDropper Grid.Row="14" Grid.Column="2" HorizontalAlignment="Left" Margin="4,0" Background="Transparent" SelectedColor="{Binding Color, Mode=OneWayToSource}" />
+
+
+                <TextBox Text="{Binding Color, Converter={StaticResource ColorConverter},UpdateSourceTrigger=PropertyChanged}" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" />
             </Grid>
         </DockPanel>
     </DockPanel>
