@@ -50,7 +50,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WpfScreenHelper, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WpfScreenHelper.2.1.0\lib\net40\WpfScreenHelper.dll</HintPath>
+      <HintPath>..\..\..\..\packages\WpfScreenHelper.2.1.0\lib\net40\WpfScreenHelper.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

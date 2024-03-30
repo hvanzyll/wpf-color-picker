@@ -14,19 +14,32 @@ namespace Dsafa.WpfColorPicker
     /// </summary>
     public partial class EyeDropper : UserControl
     {
+		/// <summary>
+		///
+		/// </summary>
         public static DependencyProperty SelectedColorProperty = DependencyProperty.Register(nameof(SelectedColor), typeof(Color), typeof(EyeDropper), new PropertyMetadata(Colors.Red));
 
+		/// <summary>
+		///
+		/// </summary>
         public EyeDropper()
         {
             InitializeComponent();
         }
 
+		/// <summary>
+		///
+		/// </summary>
         public Color SelectedColor
         {
             get => (Color)GetValue(SelectedColorProperty);
             set => SetValue(SelectedColorProperty, value);
         }
 
+		/// <summary>
+		///
+		/// </summary>
+		/// <returns></returns>
         public static Rect CurrentScreenRect()
         {
             return Screen.FromPoint(MouseHelper.MousePosition).Bounds;

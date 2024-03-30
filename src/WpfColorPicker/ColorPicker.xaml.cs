@@ -10,6 +10,9 @@ namespace Dsafa.WpfColorPicker
     /// </summary>
     public partial class ColorPicker : UserControl
     {
+		/// <summary>
+		///
+		/// </summary>
         public static readonly DependencyProperty ColorProperty = DependencyProperty.Register(nameof(Color), typeof(Color), typeof(ColorPicker), new PropertyMetadata(Colors.Red, OnColorChanged));
 
         /// <summary>
